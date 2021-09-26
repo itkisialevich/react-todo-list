@@ -1,0 +1,29 @@
+.headerApp {
+  display: "flex";
+  justify-content: space-around;
+  align-items: "center";
+  margin-bottom: 10px;
+  border-bottom: 1.9px solid #162229;
+}
+
+.inputApp {
+  width: 300px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Crimson Text", serif;
+  font-family: sans-serif;
+  color: #162229;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.inputApp::placeholder {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "Crimson Text", serif;
+  color: #162229;
+  letter-spacing: 2px;
+  opacity: 0.5;
+}

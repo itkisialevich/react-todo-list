@@ -1,0 +1,13 @@
+.primary {
+  appearance: none;
+  margin: 0px;
+  padding: 0px;
+  width: 30px;
+  height: 25px;
+  font-size: 35px;
+  color: #080b11;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
