@@ -1,5 +1,6 @@
 import React from "react";
 import { Form } from "../Form";
+import { TodoItem } from "../TodoItem";
 import styles from "./TodoList.module.css";
 
 export class TodoList extends React.Component {
@@ -8,8 +9,8 @@ export class TodoList extends React.Component {
 
     this.state = {
       todos: [],
-      checked: false,
-      isSelected: false,
+      /*checked: false,
+      isSelected: false,*/
     };
   }
 
@@ -45,6 +46,11 @@ export class TodoList extends React.Component {
     this.setState({ todos: newTodos });
   };
 
+  onClickDeleteSelectedItem = () => {
+    const filteredTodos = this.state.todos.filter((item) => !item.isSelected);
+    this.setState({ todos: filteredTodos });
+  };
+
   deleteItem = (id) => {
     const filteredTodos = this.state.todos.filter((item) => item.id !== id);
     this.setState({ todos: filteredTodos });
@@ -64,43 +70,35 @@ export class TodoList extends React.Component {
           <Form onClick={this.onClickAdd} />
           {this.state.todos.map((item) => {
             return (
-              <div
-                className={
-                  item.isSelected ? styles.todoItemSelected : styles.todoItem
-                }
+              <TodoItem
                 key={item.id}
-                onDoubleClick={() => this.dobleClick(item.id)}
-                isSelected={item.selected}
-              >
-                <div className={styles.itemLeft}>
-                  <input
-                    onClick={() => this.handleCheckboxChange(item.id)}
-                    className={styles.checkbox}
-                    type="radio"
-                    checked={item.checked}
-                  ></input>
-
-                  <p
-                    className={
-                      item.checked
-                        ? styles.descriptionChecked
-                        : styles.description
-                    }
-                  >
-                    {item.text}
-                  </p>
-                </div>
-                <button
-                  className={styles.basket}
-                  onClick={() => this.deleteItem(item.id)}
-                ></button>
-              </div>
+                text={item.text}
+                id={item.id}
+                dobleClick={this.dobleClick}
+                handleCheckboxChange={this.handleCheckboxChange}
+                deleteItem={this.deleteItem}
+                isSelected={item.isSelected}
+                checked={item.checked}
+              />
             );
           })}
         </div>
-        <button className={styles.buttonDelete} onClick={this.onClickDelete}>
-          Delete All
-        </button>
+        {this.state.todos.length > 0 ? (
+          <div className={styles.footer}>
+            <button
+              className={styles.buttonDelete}
+              onClick={this.onClickDeleteSelectedItem}
+            >
+              Delete item
+            </button>
+            <button
+              className={styles.buttonDelete}
+              onClick={this.onClickDelete}
+            >
+              Delete all
+            </button>
+          </div>
+        ) : null}
       </div>
     );
   }

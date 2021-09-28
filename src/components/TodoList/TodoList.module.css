@@ -10,7 +10,7 @@
   align-items: center;
   width: 400px;
   min-height: 500px;
-  background-color: #e7eaef;
+  background-color: #e9e9ec;
   border-radius: 15px;
   box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.8);
 }
@@ -42,104 +42,34 @@
   font-family: "Rozha One", serif;
 }
 
-.todoItem {
+.footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  height: 30px;
-  border-bottom: 1px solid #9ba8b8;
-}
-
-.todoItemSelected {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  height: 30px;
-  -webkit-box-shadow: 0 6px 6px -6px #080b11;
-  -moz-box-shadow: 0 6px 6px -6px #080b11;
-  box-shadow: 0 6px 6px -6px #080b11;
-}
-
-.todoItemSelect {
-  text-decoration: line-through;
-}
-
-.itemLeft {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.checkbox {
-  appearance: none;
-  margin: 0px;
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-  box-sizing: border-box;
-  border: 2.8px solid #05828e;
-  border-radius: 50%;
-  background-color: #e7eaef;
-  margin-right: 10px;
-  position: relative;
-}
-
-.checkbox:checked {
-  background-color: #05828e;
-  background-size: contain;
-  background-image: url("./check1.png");
-  background-repeat: no-repeat, repeat;
-  background-position: center;
-}
-
-.description {
-  margin: 0px;
-  text-align: left;
-  font-family: "Crimson Text", serif;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 1px;
-}
-
-.descriptionChecked {
-  margin: 0px;
-  text-align: left;
-  font-family: "Crimson Text", serif;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 1px;
-  text-decoration: line-through;
-}
-
-.basket {
-  width: 30px;
-  height: 20px;
-  border: none;
-  background: none;
-  background-size: contain;
-  background-image: url("./basket.svg");
-  background-repeat: no-repeat, repeat;
-  background-position: center;
+  align-self: end;
+  justify-content: flex-end;
 }
 
 .buttonDelete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   align-self: end;
   width: 100px;
   height: 30px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-right: 25px;
-  padding-right: 3px;
   background: none;
-  border: none;
-  border-top: 1.5px solid #080b11;
+  border: 1.5px solid #162229;
   text-align: center;
-  font-size: 16px;
-  color: #7e868c;
+  font-size: 14px;
+  color: #162229;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
   text-align: right;
   font-family: "Rozha One", serif;
+}
+
+.buttonDelete:hover {
+  background: radial-gradient(#05828e, #080b11);
+  background-repeat: no-repeat;
+  color: #e9e9ec;
 }
